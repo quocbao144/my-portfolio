@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quốc Bảo Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="Wedding.css" />
+
+</head>
+<body>
+  <!-------------------------------------------------------------------------------------------------------- -->
+  <header class="site-header">
+    <div class="logo">QUỐC BẢO</div>
+    <nav class="nav-menu">
+      <a href="index.html" class="nav-link">PORTFOLIO</a>
+      <a href="#cinematic" class="nav-link">SHOWREEL</a>
+      <a href="about.html" class="nav-link">ABOUT</a>
+      <a href="#contact" class="nav-link">CONTACT</a>
+    </nav>
+  </header>
+   <!-------------------------------------------------------------------------------------------------------- -->
+   <!-- Wedding Section -->
+
+<section class="wedding-video-section">
+  <div class="video-wrapper">
+    <iframe 
+      src="https://player.vimeo.com/video/1100228430?autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0"
+      frameborder="0"
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowfullscreen
+      style="width: 100%; height: 100%;">
+    </iframe>
+  </div>
+</section>
+
+<section class="gallery-section">
+  <div class="gallery-grid">
+    <img src="./Dancing/anh1.JPG" alt="Frame 1" />
+    <img src="./Dancing/anh11.JPG" alt="Frame 2" />
+    <img src="./Dancing/anh3.JPG" alt="Frame 3" />
+    <img src="./Dancing/anh5.JPG" alt="Frame 4" />
+    <img src="./Dancing/anh7.JPG" alt="Frame 5" />
+    <img src="./Dancing/anh6.JPG" alt="Frame 6" />
+    <img src="./Dancing/anh8.JPG" alt="Frame 7" />
+    <!-- Bạn thêm bao nhiêu ảnh cũng được, nó sẽ tự xuống hàng -->
+  </div>
+</section>
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <span class="close" onclick="closeLightbox()">&times;</span>
+  <img class="lightbox-content" id="lightbox-img">
+  <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+  <a class="next" onclick="changeImage(1)">&#10095;</a>
+</div>
+<script>
+  const images = document.querySelectorAll('.gallery-grid img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  let currentIndex = 0;
+
+  const imageArray = Array.from(images).map(img => img.src);
+
+  images.forEach((img, index) => {
+    img.addEventListener('click', () => {
+      lightbox.style.display = 'block';
+      lightboxImg.src = img.src;
+      currentIndex = index;
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.style.display = 'none';
+  }
+
+  function changeImage(n) {
+    currentIndex += n;
+    if (currentIndex < 0) currentIndex = imageArray.length - 1;
+    if (currentIndex >= imageArray.length) currentIndex = 0;
+    lightboxImg.src = imageArray[currentIndex];
+  }
+
+  window.addEventListener('keydown', function (e) {
+    if (lightbox.style.display === 'block') {
+      if (e.key === 'ArrowLeft') changeImage(-1);
+      if (e.key === 'ArrowRight') changeImage(1);
+      if (e.key === 'Escape') closeLightbox();
+    }
+  });
+</script>
+<section class="bts-section">
+  <div class="bts-title">
+    <h2><em>Behind-the-scenes</em></h2>
+  </div>
+  <div class="bts-content">
+    <p>This spot was shot on the Lumix S1H coupled with the Leica R set.</p>
+    <p>
+      The production consists of 2 sections: studio and outdoors. While the studio setup was much more controlled –
+      we lit it with simply 2 Aputure 1200x’s outside, and an Amaran F22c inside, the whole production generally has
+      a very documentary style to it. The focus was more on capturing the moments rather than grabbing the exact shot
+      in post. The S1H, being a relatively old camera, shined in these situations. Stunning Lumix color science,
+      unbelievable in-body stabilization, and great dynamic range, packed in small mirrorless body, all contributed
+      to how we managed to shoot this.
+    </p>
+  </div>
+</section>
+
+
+
+
+
+<footer class="site-footer">
+  <div class="footer-wrapper">
+    <div class="social-icons">
+      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    </div>
+    <p class="copyright">
+      © 2025 Quốc Bảo – quocbao291200@gmail.com
+    </p>
+  </div>
+</footer>
+</html>

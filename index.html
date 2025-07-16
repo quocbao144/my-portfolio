@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quốc Bảo Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <a href="about.html">ABOUT</a>
+ <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+</head>
+<body>
+  <!-------------------------------------------------------------------------------------------------------- -->
+ <header class="site-header">
+  <div class="logo">QUỐC BẢO</div>
+  <nav class="nav-menu">
+    <a href="#portfolio" class="nav-link active">PORTFOLIO</a>
+    <a href="showreel.html" class="nav-link">SHOWREEL</a>
+    <a href="about.html" class="nav-link">ABOUT</a>
+    <a href="#contact" class="nav-link">CONTACT</a>
+  </nav>
+</header>
+
+   <!-------------------------------------------------------------------------------------------------------- -->
+
+<section class="gallery">
+  <a href="nature.html" class="gallery-item">
+    <div class="image-wrapper">
+      <img src="images/nature.jpg" alt="Nature" class="image-zoom">
+    </div>
+    <h3>NATURE</h3>
+  </a>
+
+  <a href="summer.html" class="gallery-item">
+    <div class="image-wrapper">
+      <img src="images/summer.jpg" alt="Summer" class="image-zoom">
+    </div>
+    <h3>SUMMER BEACH</h3>
+  </a>
+
+  <a href="Wedding.html" class="gallery-item">
+    <div class="image-wrapper">
+      <img src="images/wedding.jpg" alt="Wedding" class="image-zoom">
+    </div>
+    <h3>WEDDING</h3>
+  </a>
+
+  <div class="gallery-item">
+    <div class="image-wrapper">
+      <img src="images/street.jpg" alt="Street Photography" class="image-zoom">
+    </div>
+    <h3>STREET PHOTOGRAPHY</h3>
+  </div>
+
+  <a href="./dancing/dancing.html" class="gallery-item">
+    <div class="image-wrapper">
+      <img src="images/DANCING.JPG" alt="Dancing" class="image-zoom">
+    </div>
+    <h3>DANCING</h3>
+  </a>
+</section>
+
+
+
+<script>
+  const zoomImages = document.querySelectorAll('.image-zoom');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('zoom-in');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  zoomImages.forEach(img => observer.observe(img));
+</script>
+
+
+  <script>
+    const links = document.querySelectorAll('.nav-link');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+  </script>
+
+
+</body>
+ <!-------------------------------------------------------------------------------------------------------- -->
+<footer class="site-footer">
+  <div class="footer-wrapper">
+    <div class="social-icons">
+      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    </div>
+    <p class="copyright">
+      © 2025 Quốc Bảo – quocbao291200@gmail.com
+    </p>
+  </div>
+</footer>
+ <!-------------------------------------------------------------------------------------------------------- -->
+
+
+
+
+</html>

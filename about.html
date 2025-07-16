@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Quốc Bảo</title>
+  <link rel="stylesheet" href="about.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">QUỐC BẢO</div>
+    <nav class="nav-menu">
+      <a href="index.html" class="nav-link ">PORTFOLIO</a>
+      <a href="showreel.html" class="nav-link">SHOWREEL</a>
+      <a href="about.html" class="nav-link active ">ABOUT</a>
+      <a href="contact.html" class="nav-link">CONTACT</a>
+    </nav>
+  </header>
+<section class="about-section">
+    <div class="about-content">
+      <h3>Hello, It's Me</h3>
+      <h1>Nguyễn Quốc Bảo</h1>
+      <h3>And I am a <span class="typing-text"></span></h3>
+      <p>Based in Ho Chi Minh City, Vietnam, I capture life through a cinematic lens.
+I specialize in storytelling through visuals — from concept to final cut.
+Passionate about crafting emotions frame by frame, I collaborate with brands, artists, and creatives to bring visions to life.</p>
+    </div>
+    <div class="about-image">
+      <span class="glow-circle"></span>
+      <img src="images/profile.jpg" alt="Avatar" />
+    </div>
+  </section>
+
+  <script>
+const typing = document.querySelector(".typing-text");
+const phrases = ["VIDEOGRAPHER ", "VIDEO EDITOR "];
+let i = 0, j = 0, currentPhrase = "", isDeleting = false;
+
+function type() {
+  if (i < phrases.length) {
+    if (!isDeleting && j <= phrases[i].length) {
+      currentPhrase = phrases[i].substring(0, j++);
+    } else if (isDeleting && j >= 0) {
+      currentPhrase = phrases[i].substring(0, j--);
+    }
+
+    typing.textContent = currentPhrase;
+
+    let delay = isDeleting ? 100 : 150; // tốc độ xóa và gõ
+    if (!isDeleting && j === phrases[i].length) {
+      isDeleting = true;
+      delay = 2000; // dừng lại 2s sau khi gõ xong
+    } else if (isDeleting && j === 0) {
+      isDeleting = false;
+      i = (i + 1) % phrases.length;
+      delay = 800; // dừng lại 0.8s sau khi xóa xong
+    }
+
+    setTimeout(type, delay);
+  }
+}
+document.addEventListener("DOMContentLoaded", type);
+</script>
+<!-- Dự án 1: Hình trái - Chữ phải -->
+<section class="project-container shift-left">
+  <!-- Hình bên trái -->
+  <div class="project-image">
+    <img src="images/about1.jpg" alt="Arduino Project" />
+  </div>
+  <!-- Chữ bên phải -->
+  <div class="project-info">
+<h3><span class="project-category">MEDIA</span> PROJECTS</h3>
+<h4>Video Editing Journey</h4>
+<p class="features-label">STARTED</p>
+<ul class="feature-list">
+  <li>Began exploring the media field in 2023</li>
+  <li>Worked as a part-time video editor</li>
+  <li>Self-taught editing techniques and storytelling</li>
+  <li>Practiced with real client and personal projects</li>
+</ul>
+  </div>
+</section>
+
+<!-- Dự án 2: Hình phải - Chữ trái -->
+<section class="project-container shift-right">
+  <!-- Chữ bên trái -->
+  <div class="project-info">
+    <h3><span class="project-category">EDUCATION</span> MILESTONE</h3>
+<h4>Graduation from HUTECH University</h4>
+<p class="features-label">IN 2024</p>
+<ul class="feature-list">
+  <li>Officially graduated from HUTECH University</li>
+  <li>Majored in Information Technology</li>
+  <li>Completed thesis and final projects with distinction</li>
+  <li>Marked a pivotal step towards professional development</li>
+</ul>
+
+  </div>
+  <!-- Hình bên phải -->
+  <div class="project-image">
+    <img src="images/about2.jpg" alt="KoiFeeder Project" />
+  </div>
+</section>
+
+<!-- Dự án 3: Hình trái - Chữ phải -->
+<section class="project-container shift-left">
+  <!-- Hình bên trái -->
+  <div class="project-image">
+    <img src="images/about3.jpg" alt="Arduino Project" />
+  </div>
+  <!-- Chữ bên phải -->
+  <div class="project-info">
+<h3><span class="project-category">PROFESSIONAL</span> ENTRY</h3>
+<h4>Internship & Freelance Experience at Fenik Studio</h4>
+<p class="features-label">IN 2024 – PRESENT</p>
+<ul class="feature-list">
+  <li>Started internship at <strong>Fenik Studio</strong> as a <strong>Video Editor</strong> and <strong>Videographer</strong></li>
+  <li>Worked with diverse clients on commercial and studio-based projects</li>
+  <li>Specialized in <strong>event coverage</strong>, <strong>wedding videos</strong>, <strong>music performances</strong>, and <strong>recap content</strong></li>
+  <li>Handled <strong>lighting setup</strong>, <strong>scene composition</strong>, and <strong>visual planning</strong></li>
+  <li>Built strong production and post-production skills through real projects</li>
+  <li>Collaborated effectively with creative teams and studio clients</li>
+</ul>
+
+  </div>
+</section>
+<!-- Dự án 4: Hình phải - Chữ trái -->
+<section class="project-container shift-right">
+  <!-- Chữ bên trái -->
+  <div class="project-info">
+<h3><span class="project-category">CAREER</span> DEVELOPMENT</h3>
+<h4>Video Production Role at 61Plus</h4>
+<p class="features-label">IN 2025</p>
+<ul class="feature-list">
+  <li>Joined <strong>61Plus</strong> as a <strong>Video Editor</strong> and <strong>Videographer</strong></li>
+  <li>Produced video content targeting <strong>TikTok-based sales channels</strong></li>
+  <li>Specialized in <strong>cosmetic marketing content</strong> and visual storytelling</li>
+  <li>Managed entire workflow: <strong>planning → filming → editing → publishing</strong></li>
+  <li>Applied social media trends and short-form video optimization</li>
+  <li>Worked with both creative and commercial teams to drive engagement and conversions</li>
+</ul>
+
+
+  </div>
+  <!-- Hình bên phải -->
+  <div class="project-image">
+    <img src="images/about6.jpg" alt="KoiFeeder Project" />
+  </div>
+</section>
+
+<!-- Dự án 5: Hình trái - Chữ phải -->
+<section class="project-container shift-left">
+  <!-- Hình bên trái -->
+  <div class="project-image">
+    <img src="images/about5.jpg" alt="Arduino Project" />
+  </div>
+  <!-- Chữ bên phải -->
+  <div class="project-info">
+<h3><span class="project-category">CREATIVE</span> EXPLORATION</h3>
+<h4>Forest Music Group</h4>
+<p class="features-label">IN 2025</p>
+<ul class="feature-list">
+  <li>Joined <strong>Forest Music Group</strong> as a <strong>Videographer</strong> and <strong>Editor</strong></li>
+  <li>Captured relaxing visuals: <strong>nature, flowers, ocean, vlogs</strong></li>
+  <li>Created videos with a <strong>soft, calming aesthetic</strong> for enhanced viewer experience</li>
+  <li>Refined skills in <strong>cinematic framing</strong> and <strong>professional color grading</strong></li>
+  <li>Strengthened visual storytelling aligned with the brand’s tone</li>
+  <li>Balanced solo creative work and team collaboration effectively</li>
+</ul>
+
+  </div>
+</section>
+
+
+</body>
+<footer class="site-footer">
+  <div class="footer-wrapper">
+    <div class="social-icons">
+      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.instagram.com/quocbao.uchihadilao/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/NyMikiyoDo" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    </div>
+    <p class="copyright">
+      © 2025 Quốc Bảo – quocbao291200@gmail.com
+    </p>
+  </div>
+</footer>
+</html>

@@ -1,0 +1,344 @@
+body {
+  margin: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Barlow Condensed', sans-serif;
+  padding-top: 80px; /* bù chiều cao header */
+}
+
+.site-header {
+  position: relative;
+  height: 80px;
+  background-color: #000;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 41px;              /* tăng 20% từ 34px */
+  letter-spacing: 5px;
+  font-weight: 600;
+  font-style: italic;           /* in nghiêng */
+  margin-left: 10%;             /* đẩy sang phải 20% màn hình */
+  z-index: 2;
+}
+
+
+
+/* Menu căn giữa tuyệt đối */
+.nav-menu {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 40px;
+  z-index: 1;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 19.2px;
+  position: relative;
+  padding-bottom: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* bóng nhẹ cho rõ ràng */
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 10%;
+  min-height: 100vh;
+  gap: 5%; /* Giảm khoảng cách giữa text và ảnh */
+}
+
+.about-content {
+  max-width: 50%;
+}
+
+.about-content h1 {
+  font-size: 3.8em; /* tăng nhẹ tiêu đề */
+  font-weight: bold;
+  margin: 0;
+}
+
+
+.about-content h3 {
+  font-size: 1.9em;
+  margin-bottom: 15px; /* tăng khoảng cách theo yêu cầu */
+}
+
+.about-content p {
+  font-size: 1.25em;
+  margin: 20px 0;
+  max-width: 500px;
+}
+
+.typing-text {
+  color: #00f7ff;
+  border-right: 2px solid white;
+  padding-right: 5px;
+}
+
+.btn:hover {
+  box-shadow: 0 0 25px #00f7ff;
+}
+
+.about-image {
+  position: relative;
+  display: inline-block;
+}
+
+
+
+.about-image img {
+  width: 420px;             /* To hơn */
+  height: 560px;            /* Dài ra tạo hình chữ nhật */
+  object-fit: cover;
+  border-radius: 16px;      /* Bo góc nhẹ */
+  z-index: 2;
+  position: relative;
+  box-shadow: 0 0 40px rgba(255, 80, 80, 0.4);  /* Glow đỏ hồng nhẹ */
+}
+
+.glow-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 370px;
+  height: 370px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(white, transparent 70%);
+  filter: blur(40px);
+  z-index: 1;
+  border-radius: 16px;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+}
+/*------------------------------------------------------------------------------------------------------------------*/
+.project-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.project-container.reverse {
+  flex-direction: row-reverse;
+}
+
+.project-container.shift-left {
+  transform: translateX(-15%);
+  justify-content: flex-start;
+}
+
+.project-container.shift-right {
+  transform: translateX(15%);
+  justify-content: flex-end;
+}
+
+.project-image img {
+  width: 320px;
+  border-radius: 12px;
+  border: 3px solid #ff3c3c;
+  box-shadow: 0 0 20px rgba(255, 60, 60, 0.4);
+}
+
+.project-info {
+  color: white;
+  max-width: 500px;
+}
+
+.project-category {
+  color: #ff3c3c;
+  font-weight: bold;
+}
+
+.features-label {
+  margin-top: 12px;
+  font-weight: bold;
+  color: #aaa;
+}
+
+.feature-list {
+  padding-left: 20px;
+  list-style: disc;
+  color: white;
+}
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+.site-footer {
+  background-color: #000;                 /* Nền màu đen */
+  padding: 50px 20px 30px;                /* Khoảng cách trong: trên 50px, hai bên 20px, dưới 30px */
+  display: flex;                          /* Dùng flexbox để căn chỉnh */
+  justify-content: center;               /* Căn giữa theo chiều ngang */
+  align-items: center;                   /* Căn giữa theo chiều dọc */
+}
+
+.footer-wrapper {
+  display: flex;                          /* Flexbox layout */
+  flex-direction: column;                /* Sắp xếp các phần tử theo chiều dọc */
+  align-items: center;                   /* Căn giữa theo chiều ngang */
+  gap: 16px;                              /* Khoảng cách giữa icon và dòng chữ */
+}
+
+.social-icons {
+  display: flex;                          /* Hiển thị các icon thành hàng ngang */
+  gap: 28px;                              /* Khoảng cách giữa các icon */
+}
+
+
+.social-icons a {
+  color: #fff;                            /* Màu trắng cho icon */
+  font-size: 24px;                        /* Cỡ icon */
+  transition: transform 0.3s ease, color 0.3s ease;  /* Hiệu ứng mượt khi hover */
+  text-decoration: none;                 /* Bỏ gạch chân dưới link */
+}
+
+
+.social-icons a:hover {
+  transform: scale(1.15);                /* Phóng to icon nhẹ khi hover */
+  color: #ff4d4d;                        /* Đổi màu icon sang đỏ khi rê chuột */
+}
+
+
+.copyright {
+  font-size: 13px;
+  color: #aaa;
+  letter-spacing: 0.5px;
+  margin-top: 10px;          /* Cách icon phía trên 15px */
+  align-self: flex-start;    /* Căn về trái */
+  margin-left: 0%;          /* Nhích sang trái 20% */
+  white-space: nowrap;       /* NGĂN XUỐNG DÒNG */
+}
+/* Responsive cho máy tính bảng */
+@media screen and (max-width: 1024px) {
+  .about-section {
+    flex-direction: column;
+    padding: 60px 40px;
+    text-align: center;
+  }
+
+  .about-image {
+    margin-left: 0;
+    margin-top: 30px;
+  }
+}
+
+/* Responsive cho điện thoại lớn như iPhone 15 Pro Max */
+@media screen and (max-width: 430px) {
+  .about-section {
+    padding: 40px 20px;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .about-content h1 {
+    font-size: 2em;
+  }
+
+  .about-content h3 {
+    font-size: 1.3em;
+  }
+
+  .about-content p {
+    font-size: 1em;
+  }
+
+  .about-image img,
+  .glow-circle {
+    width: 220px;
+    height: 220px;
+  }
+    header {
+    padding: 10px 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+}
+
+/* Responsive cho điện thoại phổ thông */
+@media screen and (max-width: 375px) {
+  .about-content h1 {
+    font-size: 1.8em;
+  }
+
+  .about-content h3 {
+    font-size: 1.1em;
+  }
+
+  .about-image img,
+  .glow-circle {
+    width: 180px;
+    height: 180px;
+  }
+    header {
+    padding: 10px 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+}

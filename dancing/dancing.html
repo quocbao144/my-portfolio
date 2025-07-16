@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quốc Bảo Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="dancing.css" />
+
+
+</head>
+<body>
+  <!-------------------------------------------------------------------------------------------------------- -->
+  <header class="site-header">
+    <div class="logo">QUỐC BẢO</div>
+    <nav class="nav-menu">
+      <a href="/index.html" class="nav-link">PORTFOLIO</a>
+      <a href="#cinematic" class="nav-link">SHOWREEL</a>
+      <a href="/about.html" class="nav-link">ABOUT</a>
+      <a href="#contact" class="nav-link">CONTACT</a>
+    </nav>
+  </header>
+   <!-------------------------------------------------------------------------------------------------------- -->
+   <!-- Wedding Section -->
+
+<!-- <section class="wedding-video-section">
+  <div class="video-wrapper">
+    <iframe 
+      src="https://player.vimeo.com/video/1100228430?autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0"
+      frameborder="0"
+      allow="autoplay; fullscreen; picture-in-picture"
+      allowfullscreen
+      style="width: 100%; height: 100%;">
+    </iframe>
+  </div>
+</section> -->
+<section class="wedding-video-section">
+  <div class="video-wrapper">
+    <video controls playsinline loop style="width: 100%; height: 100%;">
+      <source src="video/video1.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
+
+
+<section class="gallery-section">
+  <div class="gallery-grid">
+    <img src="images/anh1.JPG" alt="Frame 1" />
+    <img src="images/anh2.JPG" alt="Frame 2" />
+    <img src="images/anh3.JPG" alt="Frame 3" />
+    <img src="images/anh4.JPG" alt="Frame 4" />
+    <img src="images/anh5.JPG" alt="Frame 5" />
+    <img src="images/anh6.JPG" alt="Frame 6" />
+    <img src="images/anh7.JPG" alt="Frame 7" />
+    <img src="images/anh8.JPG" alt="Frame 8" />
+    <img src="images/anh9.JPG" alt="Frame 9" />
+    <img src="images/anh10.JPG" alt="Frame 10" />
+    <img src="images/anh11.JPG" alt="Frame 11" />
+    <img src="images/anh12.JPG" alt="Frame 12" />
+    <!-- Bạn thêm bao nhiêu ảnh cũng được, nó sẽ tự xuống hàng -->
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <span class="close" onclick="closeLightbox()">&times;</span>
+  <img class="lightbox-content" id="lightbox-img">
+  <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+  <a class="next" onclick="changeImage(1)">&#10095;</a>
+</div>
+<script>
+  const images = document.querySelectorAll('.gallery-grid img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  let currentIndex = 0;
+
+  const imageArray = Array.from(images).map(img => img.src);
+
+  images.forEach((img, index) => {
+    img.addEventListener('click', () => {
+      lightbox.style.display = 'block';
+      lightboxImg.src = img.src;
+      currentIndex = index;
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.style.display = 'none';
+  }
+
+  function changeImage(n) {
+    currentIndex += n;
+    if (currentIndex < 0) currentIndex = imageArray.length - 1;
+    if (currentIndex >= imageArray.length) currentIndex = 0;
+    lightboxImg.src = imageArray[currentIndex];
+  }
+
+  window.addEventListener('keydown', function (e) {
+    if (lightbox.style.display === 'block') {
+      if (e.key === 'ArrowLeft') changeImage(-1);
+      if (e.key === 'ArrowRight') changeImage(1);
+      if (e.key === 'Escape') closeLightbox();
+    }
+  });
+</script>
+
+<section class="bts-section">
+  <div class="bts-title">
+    <h2><em>Behind-the-scenes</em></h2>
+  </div>
+  <div class="bts-content">
+    <p>This project was filmed using two Sony A6700 cameras.</p>
+    <p>
+      A 18–135mm lens was used to capture detailed action shots during the model's performance of specific movements, while a 24–70mm lens was employed for medium and wide-angle framing. The lighting setup included four Amaran RGB lights: one 600W light placed behind the model for backlighting, two 300W lights also positioned at the back to create rim lighting, and one 300W light on the left side for fill.
+    </p>
+  </div>
+</section>
+
+<section class="carousel-section">
+  <div class="carousel-track">
+    <img src="./images/bts1.JPG" alt="Frame 1">
+    <img src="./images/bts2.JPG" alt="Frame 2">
+    <img src="./images/bts3.JPG" alt="Frame 3">
+    <img src="./images/bts4.JPG" alt="Frame 4">
+    <img src="./images/bts5.JPG" alt="Frame 5">
+    <img src="./images/bts6.JPG" alt="Frame 6">
+    <img src="./images/bts7.JPG" alt="Frame 7">
+    <!-- Duplicate for infinite loop effect -->
+    <img src="./images/bts1.JPG" alt="Frame 1 Duplicate">
+    <img src="./images/bts2.JPG" alt="Frame 2 Duplicate">
+    <img src="./images/bts3.JPG" alt="Frame 3 Duplicate">
+    <img src="./images/bts4.JPG" alt="Frame 4 Duplicate">
+    <img src="./images/bts5.JPG" alt="Frame 5 Duplicate">
+    <img src="./images/bts6.JPG" alt="Frame 6 Duplicate">
+    <img src="./images/bts7.JPG" alt="Frame 7 Duplicate">
+  </div>
+
+  <div class="carousel-title">
+    <h2>BEHIND THE SCENES <br><span>Photo</span></h2>
+    <p>A behind-the-scenes look into our production days — from the camera setups, lighting, and scene design, to the candid moments of the crew and models in action. These photos document the raw, authentic energy behind the final visuals.</p>
+  </div>
+</section>
+
+<div class="project-navigation">
+  <!-- Nút bên trái: Dự án trước đó -->
+  <a href="previous-project.html" class="project-btn btn-left">
+    <span class="arrow">❮</span> Previous Project
+  </a>
+
+  <!-- Nút bên phải: Dự án tiếp theo -->
+  <a href="next-project.html" class="project-btn btn-right">
+    Next Project <span class="arrow">❯</span>
+  </a>
+</div>
+
+
+
+
+
+
+<footer class="site-footer">
+  <div class="footer-wrapper">
+    <div class="social-icons">
+      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    </div>
+    <p class="copyright">
+      © 2025 Quốc Bảo – quocbao291200@gmail.com
+    </p>
+  </div>
+</footer>
+</html>

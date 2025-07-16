@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quốc Bảo Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="showreel.css" />
+ <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+</head>
+<body>
+  <!-------------------------------------------------------------------------------------------------------- -->
+ <header class="site-header">
+  <div class="logo">QUỐC BẢO</div>
+  <nav class="nav-menu">
+    <a href="index.html" class="nav-link">PORTFOLIO</a>
+    <a href="showreel.html" class="nav-link active">SHOWREEL</a>
+    <a href="about.html" class="nav-link">ABOUT</a>
+    <a href="contact.html" class="nav-link">CONTACT</a>
+  </nav>
+</header>
+ <!-------------------------------------------------------------------------------------------------------- -->
+<main>
+    <div class="main-content">
+      <video id="bgVideo" autoplay muted loop>
+        <source src="footageshowreel/wedding.mp4" type="video/mp4" />
+        Trình duyệt của bạn không hỗ trợ video.
+      </video>
+
+      <div class="overlay">
+        <div class="side-panel">
+          <h3>List Video Showreel</h3>
+          <div class="movie-card" onclick="switchVideo('wedding.mp4')">
+            <img src="footageshowreel/wedding.jpg" alt="Scooby Do" />
+            <div class="info">
+              <p class="title">WEDDING</p>
+              <p class="genre">Romance, Ceremony, Emotional</p>
+
+            </div>
+          </div>
+
+          <div class="movie-card" onclick="switchVideo('nature.mp4')">
+            <img src="footageshowreel/nature.jpg" alt="Scooby Do" />
+            <div class="info">
+              <p class="title">NATURE</p>
+              <p class="genre">Travel, Wildlife, Documentary</p>
+
+            </div>
+          </div>
+
+          <div class="movie-card" onclick="switchVideo('event.mp4')">
+            <img src="footageshowreel/event.jpg" alt="Scooby Do" />
+            <div class="info">
+              <p class="title">EVENT</p>
+              <p class="genre">Corporate, Live Show, Highlights</p>
+            </div>
+            
+          </div>
+           <div class="movie-card" onclick="switchVideo('summer.mp4')">
+            <img src="footageshowreel/summer.jpg" alt="Scooby Do" />
+            <div class="info">
+              <p class="title">SUMMER BEACH</p>
+              <p class="genre">Travel, Vacation, Lifestyle</p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function switchVideo(file) {
+      const video = document.getElementById('bgVideo');
+      video.src = `footageshowreel/${file}`;
+      video.play();
+    }
+  </script>
+
+<footer class="site-footer">
+  <div class="footer-wrapper">
+    <div class="social-icons">
+      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    </div>
+    <p class="copyright">
+      © 2025 Quốc Bảo – quocbao291200@gmail.com
+    </p>
+  </div>
+</footer>
+
+</body>
